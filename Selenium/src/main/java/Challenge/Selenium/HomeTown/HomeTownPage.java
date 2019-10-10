@@ -13,11 +13,15 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import static org.junit.Assert.assertEquals;
 
-import Challenge.Selenium.MeriPustak.MeriPustakPage;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
+import java.io.IOException;
 
-public class HomeTownPage {
+import Challenge.Selenium.Base.TestBase;
 
-	public static final Logger log = Logger.getLogger(MeriPustakPage.class.getName());
+public class HomeTownPage extends TestBase {
+
+	public static final Logger log = Logger.getLogger(HomeTownPage.class.getName());
 
 	WebDriver driver;
 	JavascriptExecutor executor;
@@ -61,21 +65,21 @@ public class HomeTownPage {
 	}
 
 	public void homeTownTab() throws Exception {
-		
-		
+
 		verifyHomeTownPage();
 
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("onesignal-popover-container")));
-		
+
 		popoverVerify();
 
-		verifysignUPNotification();
+		Robot robot = new Robot();
+		robot.keyPress(KeyEvent.VK_ESCAPE);
 
 		// Clicking on electronics Button
 		log.info("popup work done");
 
-		//Thread.sleep(5000);
+		// Thread.sleep(5000);
 		executor = (JavascriptExecutor) driver;
 		executor.executeScript("arguments[0].click();", electronicsButton);
 
@@ -114,6 +118,12 @@ public class HomeTownPage {
 			log.info("Successfully verified Home Town Page");
 		} else {
 			log.info("Failed to verify Home Town Page");
+			try {
+				getScreenshot(driver, "HomeTownverificationFailed");
+			} catch (IOException e) {
+				log.info("Failed to get screenshot");
+			}
+
 		}
 	}
 
@@ -126,15 +136,6 @@ public class HomeTownPage {
 			cancelPopoverButton.click();
 		} else {
 			log.info("No popover present in Home Town page");
-		}
-	}
-
-	public void verifysignUPNotification() {
-		if (signUPNotification.isDisplayed()) {
-			signUPNotification.click();
-			log.info("sign UP Notification available in page");
-		} else {
-			log.info("sign UP Notification not available in page");
 		}
 	}
 }

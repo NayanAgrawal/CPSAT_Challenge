@@ -27,7 +27,7 @@ public class AddItemToCart extends TC001_MeriPustak {
 
 	@FindBy(xpath = "//input[@id='ContentPlaceHolder1_AddtoCart']")
 	WebElement addToCartButton;
-	
+
 	@FindBy(id = "lblNoCartItem")
 	WebElement cartValueLink;
 
@@ -47,9 +47,9 @@ public class AddItemToCart extends TC001_MeriPustak {
 
 		addToCartButton.click();
 
-		String cartMessage=cartValueLink.getText();
+		String cartMessage = cartValueLink.getText();
 		log.info("message is - " + cartMessage);
-		Assert.assertEquals(cartMessage,"1 Item");
+		Assert.assertEquals(cartMessage, "1 Item");
 	}
 
 }

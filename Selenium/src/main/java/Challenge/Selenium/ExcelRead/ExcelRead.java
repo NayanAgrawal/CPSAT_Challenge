@@ -1,4 +1,4 @@
-package Challenge.Selenium.ExcelReadWrite;
+package Challenge.Selenium.ExcelRead;
 
 import java.io.FileInputStream;
 

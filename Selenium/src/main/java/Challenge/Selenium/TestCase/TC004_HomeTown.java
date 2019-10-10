@@ -5,15 +5,12 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.aventstack.extentreports.ExtentTest;
-
 import Challenge.Selenium.Base.TestBase;
 import Challenge.Selenium.HomeTown.HomeTownPage;
 
 public class TC004_HomeTown extends TestBase {
 
-	public static final Logger log = Logger.getLogger(TC001_MeriPustak.class.getName());
-	public static ExtentTest child;
+	public static final Logger log = Logger.getLogger(TC004_HomeTown.class.getName());
 
 	HomeTownPage homeTownPage;
 

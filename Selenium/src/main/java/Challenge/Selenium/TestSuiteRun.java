@@ -4,7 +4,6 @@ import org.junit.runner.Result;
 import org.junit.runner.notification.Failure;
 import org.testng.TestNG;
 
-import Challenge.Selenium.MeriPustak.MeriPustakPage;
 import Challenge.Selenium.TestCase.TC001_MeriPustak;
 import Challenge.Selenium.TestCase.TC005_WoodLand;
 
@@ -13,7 +12,7 @@ import org.junit.runner.JUnitCore;
 
 public class TestSuiteRun {
 
-	public static final Logger log = Logger.getLogger(MeriPustakPage.class.getName());
+	public static final Logger log = Logger.getLogger(TestSuiteRun.class.getName());
 
 	public static void main(String[] args) {
 

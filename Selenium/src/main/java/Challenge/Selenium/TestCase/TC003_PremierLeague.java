@@ -5,16 +5,13 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.aventstack.extentreports.ExtentTest;
-
 import Challenge.Selenium.Base.TestBase;
 import Challenge.Selenium.PremierLeague.PremierLeaguePage;
 
 public class TC003_PremierLeague extends TestBase {
 
-	public static final Logger log = Logger.getLogger(TC001_MeriPustak.class.getName());
-	public static ExtentTest child;
-
+	public static final Logger log = Logger.getLogger(TC003_PremierLeague.class.getName());
+	
 	PremierLeaguePage premierLeaguePage;
 
 	@Before

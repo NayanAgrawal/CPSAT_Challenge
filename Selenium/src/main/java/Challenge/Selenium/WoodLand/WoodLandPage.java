@@ -1,5 +1,6 @@
 package Challenge.Selenium.WoodLand;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,10 +11,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import Challenge.Selenium.MeriPustak.MeriPustakPage;
+import Challenge.Selenium.Base.TestBase;
 
-public class WoodLandPage {
-	public static final Logger log = Logger.getLogger(MeriPustakPage.class.getName());
+public class WoodLandPage extends TestBase {
+	public static final Logger log = Logger.getLogger(WoodLandPage.class.getName());
 
 	WebDriver driver;
 	List<String> list;
@@ -44,6 +45,7 @@ public class WoodLandPage {
 	public void woodLandPageTab(String productName) throws InterruptedException {
 		verifyWoodLandPage();
 
+		Thread.sleep(1000);
 		searchIconButton.click();
 
 		searchkeyText.sendKeys(productName);
@@ -51,7 +53,7 @@ public class WoodLandPage {
 		searchButton.click();
 
 		Thread.sleep(2000);
-		
+
 		// Clicking on Filter
 		sortByHighToLowButton.click();
 
@@ -76,8 +78,6 @@ public class WoodLandPage {
 
 		}
 
-		log.info(list);
-
 		if (isSorted() == true) {
 			log.info("First 8 products are in descending order of the price and the list is - " + list);
 		} else {
@@ -100,6 +100,11 @@ public class WoodLandPage {
 			log.info("Successfully verified Wood Land Page");
 		} else {
 			log.info("Failed to verify Wood Land Page");
+			try {
+				getScreenshot(driver, "WoodLandverificationFailed");
+			} catch (IOException e) {
+				log.info("Failed to get screenshot");
+			}
 		}
 	}
 }

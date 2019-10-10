@@ -6,16 +6,13 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import com.aventstack.extentreports.ExtentTest;
-
 import Challenge.Selenium.Base.TestBase;
-import Challenge.Selenium.ExcelReadWrite.ExcelRead;
+import Challenge.Selenium.ExcelRead.ExcelRead;
 import Challenge.Selenium.WoodLand.WoodLandPage;
 
 public class TC005_WoodLand extends TestBase {
 
-	public static final Logger log = Logger.getLogger(TC001_MeriPustak.class.getName());
-	public static ExtentTest child;
+	public static final Logger log = Logger.getLogger(TC005_WoodLand.class.getName());
 	ExcelRead reader;
 	WoodLandPage woodLandPage;
 
@@ -34,16 +31,15 @@ public class TC005_WoodLand extends TestBase {
 
 	@Test(priority = 1, enabled = false)
 	public void verifyWoodLand() throws Exception {
-		
 
 	}
 
 	@Test(dataProvider = "testdata", priority = 2, enabled = true)
 	public void TestFireFox(String productName) throws InterruptedException {
-		
+		log.info("Test case for " + productName);
 		woodLandPage = new WoodLandPage(driver);
 		woodLandPage.woodLandPageTab(productName);
-		log.info("productName - " + productName);
+		
 	}
 
 	@DataProvider(name = "testdata")

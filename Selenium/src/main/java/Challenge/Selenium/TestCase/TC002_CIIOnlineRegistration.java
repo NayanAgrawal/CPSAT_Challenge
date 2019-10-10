@@ -5,15 +5,12 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.aventstack.extentreports.ExtentTest;
 import Challenge.Selenium.Base.TestBase;
 import Challenge.Selenium.CIIOnlineRegistration.CIIOnlineRegistrationForm;
 
 public class TC002_CIIOnlineRegistration extends TestBase {
 
-	public static final Logger log = Logger.getLogger(TC001_MeriPustak.class.getName());
-	public static ExtentTest child;
-
+	public static final Logger log = Logger.getLogger(TC002_CIIOnlineRegistration.class.getName());
 	CIIOnlineRegistrationForm cIIOnlineRegistrationForm;
 
 	

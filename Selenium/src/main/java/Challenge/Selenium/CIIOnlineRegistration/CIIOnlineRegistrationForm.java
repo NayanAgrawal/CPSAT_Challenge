@@ -1,5 +1,7 @@
 package Challenge.Selenium.CIIOnlineRegistration;
 
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.log4j.Logger;
@@ -12,11 +14,11 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 import static org.junit.Assert.assertEquals;
 
-import Challenge.Selenium.MeriPustak.MeriPustakPage;
+import Challenge.Selenium.Base.TestBase;
 
-public class CIIOnlineRegistrationForm {
+public class CIIOnlineRegistrationForm extends TestBase {
 
-	public static final Logger log = Logger.getLogger(MeriPustakPage.class.getName());
+	public static final Logger log = Logger.getLogger(CIIOnlineRegistrationForm.class.getName());
 
 	WebDriver driver;
 
@@ -77,16 +79,18 @@ public class CIIOnlineRegistrationForm {
 		Select thirdTitle = new Select(thirdRowTitle);
 		thirdTitle.selectByVisibleText("CS");
 
-		// print all the options from Dropdown
+		// print all the options from Drop-down
 		Select titleTag = new Select(firstRowTitle);
 		List<WebElement> titleCount = titleTag.getOptions();
 		int iSize = titleCount.size();
+		List<String> allDropDownValues = new ArrayList<String>();
 
 		for (int i = 1; i < iSize; i++) {
 			String dropdownTitleValue = titleCount.get(i).getText();
-			log.info(dropdownTitleValue);
+			allDropDownValues.add(dropdownTitleValue);
 		}
 
+		log.info("Title dropdown values -  " + allDropDownValues);
 		Thread.sleep(3000);
 	}
 
@@ -95,6 +99,11 @@ public class CIIOnlineRegistrationForm {
 			log.info("Successfully verified CII Online Registration Page");
 		} else {
 			log.info("Failed to verify CII Online Registration Page");
+			try {
+				getScreenshot(driver, "CIIVerificationFailed");
+			} catch (IOException e) {
+				log.info("Failed to get screenshot");
+			}
 		}
 	}
 }
