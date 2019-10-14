@@ -10,6 +10,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ExcelRead {
 
+	//Read excel
 	public static Object[][] readExcel(String filePath, String sheetName) throws Exception {
 		FileInputStream file = new FileInputStream(filePath);
 		XSSFWorkbook wb = new XSSFWorkbook(file);

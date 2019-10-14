@@ -113,6 +113,7 @@ public class HomeTownPage extends TestBase {
 
 	}
 
+	//verify Home-Town Page availability
 	public void verifyHomeTownPage() {
 		if (verifyHomeTown.isDisplayed()) {
 			log.info("Successfully verified Home Town Page");
@@ -127,8 +128,8 @@ public class HomeTownPage extends TestBase {
 		}
 	}
 
+	//popover Verify
 	public void popoverVerify() {
-
 		if (popoverVerify.isDisplayed()) {
 			log.info("popover present in Home Town page");
 			JavascriptExecutor executor = (JavascriptExecutor) driver;

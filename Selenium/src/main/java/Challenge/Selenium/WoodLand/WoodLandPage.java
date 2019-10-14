@@ -86,6 +86,7 @@ public class WoodLandPage extends TestBase {
 
 	}
 
+	//returns true false value for order list
 	public boolean isSorted() {
 		boolean sorted = false;
 		for (int i = 1; i < list.size(); i++) {
@@ -95,6 +96,7 @@ public class WoodLandPage extends TestBase {
 		return sorted;
 	}
 
+	//verify WoodLand Page
 	public void verifyWoodLandPage() {
 		if (verifyWoodLand.isDisplayed()) {
 			log.info("Successfully verified Wood Land Page");

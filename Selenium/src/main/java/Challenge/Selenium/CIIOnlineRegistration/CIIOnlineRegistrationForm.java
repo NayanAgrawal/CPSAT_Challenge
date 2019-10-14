@@ -94,6 +94,7 @@ public class CIIOnlineRegistrationForm extends TestBase {
 		Thread.sleep(3000);
 	}
 
+	//verify CII Online Registration Page avaialbility
 	public void verifyCIIOnlineRegistrationPage() {
 		if (displayPageVerification.isDisplayed()) {
 			log.info("Successfully verified CII Online Registration Page");

@@ -33,6 +33,7 @@ public class TestBase {
 
 	}
 
+	//Select browser method
 	public void selectBrowser(String browser) {
 		if (browser.equalsIgnoreCase("chrome")) {
 			log.info("Creating object of " + browser);
@@ -46,6 +47,7 @@ public class TestBase {
 		}
 	}
 
+	//Get application URL method
 	public void getUrl(String url) {
 		log.info("Navigating to : " + url);
 		driver.manage().window().maximize();
@@ -53,6 +55,7 @@ public class TestBase {
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 	}
 
+	//Generate screenshot
 	public String getScreenshot(WebDriver driver, String imageName) throws IOException {
 
 		if (imageName.equals("")) {
@@ -78,6 +81,7 @@ public class TestBase {
 
 	}
 
+	//Wait for element to be clickable
 	public void explicatWaitTillvisibility(WebDriver driver, WebElement xpathValue) {
 		WebDriverWait wait = new WebDriverWait(driver, 20);
 		wait.until(ExpectedConditions.elementToBeClickable(xpathValue));

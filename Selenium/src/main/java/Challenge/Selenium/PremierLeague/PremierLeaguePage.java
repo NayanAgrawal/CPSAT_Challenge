@@ -120,6 +120,7 @@ public class PremierLeaguePage extends TestBase {
 		}
 	}
 
+	//verify Premier League Page
 	public void verifyPremierLeaguePage() {
 		if (verifyPremierLeague.isDisplayed()) {
 			log.info("Successfully verified Premier League Page");
@@ -133,6 +134,7 @@ public class PremierLeaguePage extends TestBase {
 		}
 	}
 
+	//verify Arsenal Overview Page
 	public void verifyArsenalOverviewPage() {
 		if (verifyArsenalOverview.isDisplayed()) {
 			log.info("Successfully verified Arsenal Overview Page");

@@ -74,6 +74,7 @@ public class MeriPustakPage extends TestBase {
 		}
 	}
 
+	//verify Shopping Cart
 	public void verifyShoppingCart() {
 		log.info(cartValueLink.getText());
 
@@ -88,6 +89,7 @@ public class MeriPustakPage extends TestBase {
 
 	}
 
+	//verify Shopping Cart Page availability
 	public void verifyShoppingCartPage() {
 		if (verifyShoppingCartPage.isDisplayed()) {
 			log.info("Successfully verified Shopping Cart Page");
